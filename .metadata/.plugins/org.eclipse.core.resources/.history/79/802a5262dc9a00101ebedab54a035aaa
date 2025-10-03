@@ -1,0 +1,20 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+
+@Service
+public class DataSearching {
+	
+	@Autowired
+	public JpaRepo jpaLogin;
+	
+	  public void searching(String something) {
+		  
+		      jpaLogin.findAll();
+		  
+	  }
+
+}

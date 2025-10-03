@@ -1,0 +1,9 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+public class PetDetails {
+	@Service
+	public void savePetDetails() {
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.petLife.demo.petstore.JpaRepository;
+
+import java.util.List;
+import java.util.UUID;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.petLife.demo.petstore.Models.RegistrationModel;
+
+import jakarta.persistence.Column;
+
+@Repository
+public interface JpaRepo extends JpaRepository<RegistrationModel,UUID> {
+	
+    List<RegistrationModel> findByMobileNumber(long mobileNumber);
+
+    List<RegistrationModel> findByEmail(String email);
+	public RegistrationModel findByUserNameAndPassword(String username, String password);
+
+	@Query("SELECT r FROM RegistrationModel r  WHERE r.userName = :something OR r.firstName = :something OR r.lastName=:something OR r.email=:something" )
+	public List<RegistrationModel> findBySomething(@Param("something") String something);
+	
+}

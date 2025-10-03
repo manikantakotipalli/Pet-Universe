@@ -1,0 +1,20 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+import com.petLife.demo.petstore.Models.RegistrationModel;
+
+@Service
+public class gettingAllDataServices {
+	@Autowired
+	public JpaRepo jpaLogin;
+	  public  List<RegistrationModel>    findallData(RegistrationModel registrationModel){
+		return jpaLogin.findAll();
+	    	   
+	       }
+
+}

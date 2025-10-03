@@ -1,0 +1,16 @@
+package com.petLife.demo.petstore.Models;
+
+import org.hibernate.validator.constraints.UUID;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="PetDetails")
+public class PetDetailsModel {
+	
+	private UUID petId;
+	
+	
+
+}

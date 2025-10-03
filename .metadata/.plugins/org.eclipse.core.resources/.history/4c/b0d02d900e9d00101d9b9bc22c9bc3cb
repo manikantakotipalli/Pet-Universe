@@ -1,0 +1,11 @@
+package com.petLife.demo.petstore.Models;
+
+import java.util.UUID;
+
+public class PetModel {
+	
+	private UUID  petId;
+	private String petName;
+	private 
+
+}

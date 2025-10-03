@@ -1,0 +1,9 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+public class Dto {
+	
+	private String userName;
+	private String passWord;
+	
+
+}

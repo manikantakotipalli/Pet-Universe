@@ -1,0 +1,47 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+import com.petLife.demo.petstore.Models.RegistrationModel;
+
+@Service
+public class StoringDataService {
+	    
+	     @Autowired
+	     public JpaRepo jpaRepo;
+	  public String saveDataService(RegistrationModel registrationModel) {
+		  
+		  boolean mobileExists = !jpaRepo.findByMobileNumber(registrationModel.getMobileNumber()).isEmpty();
+	        boolean emailExists = !jpaRepo.findByEmail(registrationModel.getEmail()).isEmpty();
+
+	        if (mobileExists && emailExists) {
+	            return "Both Mobile number and Email already exist!";
+	        } else if (mobileExists) {
+	            return "Mobile number already exists!";
+	        } else if (emailExists) {
+	            return "Email already exists!";
+	        }
+
+	        jpaRepo.save(registrationModel);
+	        return "Successfully saved!";
+		  
+		  
+		  
+		  
+		  
+//		   List<RegistrationModel> s=jpaRepo.findByMobileNumberAndEmail(registrationModel.getMobileNumber(),registrationModel.getEmail());
+//		   
+//		   if (s.isEmpty()) {
+//		  jpaRepo.save(registrationModel);
+//		  return "the given Mobile number and Email_id is  Successfully Saved ";}
+//		   else {
+//			   return "the given Mobile number and Email_id is  Exists";
+// }
+			   
+	  }
+	
+}

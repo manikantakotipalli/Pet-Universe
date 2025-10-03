@@ -1,0 +1,42 @@
+package com.petLife.demo.petstore.Models;
+
+import java.util.UUID;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+@Entity()
+@Table (name="petDetails")
+public class PetModel {
+	@Id
+	private UUID  petId;
+	@Column
+	private String petName;
+	@Column 
+	private String petCategory;
+	@Column
+	private long price ;
+	private String description;
+	
+	public UUID getPetId() {
+		return petId;
+	}
+	public void setPetId(UUID petId) {
+		this.petId = petId;
+	}
+	public String getPetName() {
+		return petName;
+	}
+	public void setPetName(String petName) {
+		this.petName = petName;
+	}
+	public String getPetCategory() {
+		return petCategory;
+	}
+	public void setPetCategory(String petCategory) {
+		this.petCategory = petCategory;
+	}
+	
+
+}

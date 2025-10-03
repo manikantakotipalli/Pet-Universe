@@ -1,0 +1,9 @@
+package com.petLife.demo.petstore.UserController;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("PetDetails")
+public class PetController {
+
+}

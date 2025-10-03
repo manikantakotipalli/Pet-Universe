@@ -1,0 +1,30 @@
+package com.petLife.demo.petstore.Models;
+
+import java.util.UUID;
+
+public class PetModel {
+	
+	private UUID  petId;
+	private String petName;
+	private String petCategory;
+	public UUID getPetId() {
+		return petId;
+	}
+	public void setPetId(UUID petId) {
+		this.petId = petId;
+	}
+	public String getPetName() {
+		return petName;
+	}
+	public void setPetName(String petName) {
+		this.petName = petName;
+	}
+	public String getPetCategory() {
+		return petCategory;
+	}
+	public void setPetCategory(String petCategory) {
+		this.petCategory = petCategory;
+	}
+	
+
+}

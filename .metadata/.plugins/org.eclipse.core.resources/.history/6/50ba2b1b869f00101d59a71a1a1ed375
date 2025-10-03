@@ -1,0 +1,27 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+import com.petLife.demo.petstore.Models.RegistrationModel;
+
+@Service
+public class UserDeleteService {
+	
+	@Autowired
+	public JpaRepo jpaDelete;
+	
+	public String deletingExists(String delete) {
+		
+		List<RegistrationModel> findData=jpaDelete.findByUserName(delete);
+		
+		       if(findData==null)
+		       {
+		    		return 	;  
+		       }
+		return delete;
+	}
+}

@@ -1,0 +1,16 @@
+package com.petLife.demo.petstore.UserController;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PetdeatilsRecivedMsg {
+	
+	
+	 @PostMapping("/petDetails/loginMessage")
+	    public String receiveLoginMessage(@RequestBody String message) {
+	        System.out.println("📩 Message received in PetDetailsService: " + message);
+	        return "Message received successfully in PetDetailsService!";
+	    }
+}

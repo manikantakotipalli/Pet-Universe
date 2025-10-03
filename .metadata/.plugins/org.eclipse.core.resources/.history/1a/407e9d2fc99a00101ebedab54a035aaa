@@ -1,0 +1,34 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+import com.petLife.demo.petstore.Models.LoginDto;
+@Service
+public class LoginService {
+	
+	public class Dto {
+
+	}
+
+	@Autowired
+	public JpaRepo jpaLogin;
+    
+     
+	public String checking(LoginDto logindto) {
+		String username=logindto.getUserName();
+		String password=logindto.getPassWord();
+		
+		   if(jpaLogin. findByUserNameAndPassword(username,password)==null) {
+			   
+			   return "Doesn't Exists";
+		   }
+		
+		return "Exists";
+	}
+	
+	
+	   
+
+}

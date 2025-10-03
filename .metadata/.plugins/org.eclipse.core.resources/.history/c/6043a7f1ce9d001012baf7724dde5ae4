@@ -1,0 +1,5 @@
+package com.petLife.demo.petstore.UserController;
+
+public class PetdeatilsRecivedMsg {
+
+}

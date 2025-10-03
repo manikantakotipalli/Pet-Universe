@@ -1,0 +1,5 @@
+package com.petLife.demo.petstoreDataTransferObject;
+
+public class RegisterDto {
+
+}

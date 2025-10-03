@@ -1,0 +1,18 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+
+@Service
+public class LoginService {
+	
+	@Autowired
+	public JpaRepo  jpaLogin;
+	
+	 public boolean checking(String userName) {
+	        return  jpaLogin.existsByUserName(userName);
+	    }
+
+}

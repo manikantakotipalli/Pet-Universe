@@ -1,0 +1,14 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserUpdatedService {
+	
+	
+	 public void userUpdated() {
+		 
+	 }
+	
+
+}

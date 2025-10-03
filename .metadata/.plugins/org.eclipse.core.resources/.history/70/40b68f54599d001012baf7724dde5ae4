@@ -1,0 +1,22 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.SaveingPetDetailsRepo;
+import com.petLife.demo.petstore.Models.PetDetailsModel;
+
+@Service
+public class PetDetailsService {
+	
+	@Autowired
+	SaveingPetDetailsRepo petRepo;
+	
+	public PetDetailsModel saveDetails(PetDetailsModel petModel) {
+
+		 
+		return  petRepo.save(petModel);
+		
+	}
+
+}

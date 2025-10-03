@@ -1,0 +1,11 @@
+package com.petLife.demo.petstore.JpaRepository;
+
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.petLife.demo.petstore.Models.PetModel;
+
+public interface PetRepository extends JpaRepository<PetModel ,UUID> {
+
+}

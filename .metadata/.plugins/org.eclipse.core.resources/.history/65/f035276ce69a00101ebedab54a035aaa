@@ -1,0 +1,21 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+
+@Service
+public class DataSearching {
+	
+	@Autowired
+	public JpaRepo jpaLogin;
+	
+	  public String searching(String something) {
+		  List<RegistrationModel> results = jpaLogin.findBySomething(something);
+		  
+		    return   jpaLogin.findBySomething(something)==null?"dosen't Exists":"Exists";
+		  
+	  }
+
+}

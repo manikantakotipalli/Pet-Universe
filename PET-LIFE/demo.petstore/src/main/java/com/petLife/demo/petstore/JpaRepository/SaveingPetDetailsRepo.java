@@ -1,0 +1,15 @@
+package com.petLife.demo.petstore.JpaRepository;
+
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.petLife.demo.petstore.Models.PetDetailsModel;
+
+@Repository
+public interface SaveingPetDetailsRepo extends  JpaRepository<PetDetailsModel,UUID>{
+	
+	
+
+}

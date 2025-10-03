@@ -1,0 +1,26 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+import com.petLife.demo.petstore.Models.RegistrationModel;
+
+@Service
+public class UserUpdatedService {
+	   
+    @Autowired
+    public JpaRepo jpaRepo;
+	
+	 public void userUpdated(String userName, RegistrationModel registrationModel) {
+		 
+		 
+		   if(!(jpaRepo.findByuserName(userName)==null){
+			   
+		   }
+		 
+		 
+	 }
+	
+
+}

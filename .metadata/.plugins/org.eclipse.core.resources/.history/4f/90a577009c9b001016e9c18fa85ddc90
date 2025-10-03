@@ -1,0 +1,21 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+import com.petLife.demo.petstore.Models.RegistrationModel;
+
+@Service
+public class StoringDataService {
+	    
+	     @Autowired
+	     public JpaRepo jpaRepo;
+	  public void  saveDataService(RegistrationModel registrationModel) {
+		  
+		   jpaRepo.findMobileNumberAndEmail(registrationModel.getMobileNumber(),registrationModel.getEmail());	  
+		  jpaRepo.save(registrationModel);
+		  
+	  }
+	
+}

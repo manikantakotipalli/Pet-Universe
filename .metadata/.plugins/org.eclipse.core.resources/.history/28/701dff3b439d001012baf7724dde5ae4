@@ -1,0 +1,28 @@
+package com.petLife.demo.petstore.UserController;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.petLife.demo.petstore.Models.PetDetailsModel;
+import com.petLife.demo.petstore.StoringDataService.PetDetailsService;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
+@RestController
+@RequestMapping("petDetails")
+public class PetDetailsController {
+	@Autowired
+	PetDetailsService petService;
+	
+	@PostMapping
+	public void petdatasave(@RequestBody PetDetailsModel petModel) {
+		
+		petService.saveDetails(petModel);
+		
+		   
+		
+	}
+
+}

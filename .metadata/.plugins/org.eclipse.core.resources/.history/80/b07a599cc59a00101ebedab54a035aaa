@@ -1,0 +1,30 @@
+package com.petLife.demo.petstore.StoringDataService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.petLife.demo.petstore.JpaRepository.JpaRepo;
+import com.petLife.demo.petstore.RegistrationModel.RegistrationModel;
+
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+
+@Service
+public class LoginService {
+	
+	public class Dto {
+
+	}
+
+	@Autowired
+	public JpaRepo jpaLogin;
+
+	public String checking(com.petLife.demo.petstore.StoringDataService.Dto dto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	   
+
+}
