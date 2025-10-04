@@ -1,9 +1,6 @@
 package com.petLife.demo.petstore.Models;
-
 import java.util.UUID;
-
 import org.hibernate.annotations.GenericGenerator;
-
 import jakarta.persistence.*;
 
 @Entity

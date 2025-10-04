@@ -27,7 +27,7 @@ public class PetDetailsModel {
 	@Column(name="petCategory")
 	private String petCategory;
 	@Column(name="petPrice")
-	private long petPrice;
+	private double petPrice;
 	@Column(name="petDescription")
 	private String petDescription;
 	
@@ -50,7 +50,7 @@ public class PetDetailsModel {
 	public void setPetCategory(String petCategory) {
 		this.petCategory = petCategory;
 	}
-	public long getPetPrice() {
+	public double  getPetPrice() {
 		return petPrice;
 	}
 	public void setPetPrice(long petPrice) {
