@@ -30,8 +30,18 @@ public class PetDetailsModel {
 	private double petPrice;
 	@Column(name="petDescription")
 	private String petDescription;
+	@Column(name="petstatus")
+	private String status;
 	
-	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public void setPetPrice(double petPrice) {
+		this.petPrice = petPrice;
+	}
 	public UUID getPetId() {
 		return petId;
 	}
@@ -53,9 +63,7 @@ public class PetDetailsModel {
 	public double  getPetPrice() {
 		return petPrice;
 	}
-	public void setPetPrice(long petPrice) {
-		this.petPrice = petPrice;
-	}
+
 	public String getPetDescription() {
 		return petDescription;
 	}

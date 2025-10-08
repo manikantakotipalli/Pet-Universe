@@ -41,7 +41,7 @@ public class UserController {
 	         {
 		return storingDataService.saveDataService(registrationModel);
 	              }
-	@PostMapping("/Login")
+	@PostMapping("/petDetails/loginMessage")
 	    public String  checkUser(@RequestBody LoginDto logindto ) {
 		 
 		   	return  loginService.checking(logindto);    

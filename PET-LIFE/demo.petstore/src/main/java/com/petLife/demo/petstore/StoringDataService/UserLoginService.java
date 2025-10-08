@@ -6,29 +6,24 @@ import org.springframework.web.client.RestTemplate;
 
 import com.petLife.demo.petstore.JpaRepository.JpaRepo;
 import com.petLife.demo.petstore.Models.LoginDto;
+import com.petLife.demo.petstore.Models.RegistrationModel;
 @Service
 public class UserLoginService {
-	
-    private final RestTemplate restTemplate = new RestTemplate();
-	
-	@Autowired
-	public JpaRepo jpaLogin;
+	 @Autowired
+	 private JpaRepo jpaLogin;
 
-	
-	public String checking(LoginDto logindto) {
-		String username=logindto.getUserName();
-		String password=logindto.getPassWord();
-		if ("admin".equals(username) && "admin".equals(password)) {
-            // ✅ Call PetDetailsService
-            String url = "http://localhost:8082/petDetails/loginMessage";
-            String message = "User Logged in: " + username;
+	    public String checking(LoginDto logindto) {
+	        String username = logindto.getUserName();
+	        String password = logindto.getPassWord();
 
-            restTemplate.postForObject(url, message, String.class);
+	        // ✅ Check if user exists in the database
+	        RegistrationModel user = jpaLogin.findByUserNameAndPassword(username, password);
 
-            return "Exists";
-        } else {
-            return "Doesn't Exist";
-        }
+	        if (user != null) {
+	            return "✅ Login successful for user: " + username;
+	        } else {
+	            return "❌ Invalid username or password!";
+	        }
+	    }
 	}
 
-}
